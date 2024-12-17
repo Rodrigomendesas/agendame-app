@@ -1,5 +1,6 @@
 import App from './App.vue'
 import router from './router'
+import './plugins/yup';
 import { createApp } from 'vue'
 import vuetify from './plugins/vuetify'
 import '@/scss/style.scss';
