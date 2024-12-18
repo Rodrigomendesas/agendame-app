@@ -30,9 +30,6 @@ const router = useRouter();
 function login(values){
   feedbackMessage.value = '';
   authStore
-    .sanctum()
-    .then(() => {
-      authStore
       .login(values.email, values.password)
       .then(() => {
         router.push({
@@ -41,8 +38,8 @@ function login(values){
       .catch(() => {
         feedbackMessage.value = "E-mail ou senha inválidos";
       });
-    });
-}
+    };
+
 </script>
 
 <template>
