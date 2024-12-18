@@ -1,10 +1,11 @@
 <script setup>
 /*Call Components*/
-import { useAuthStore } from '@/store/auth';
-const authStore = useAuthStore();
+import { useMeStore } from '@/store/me';
+const meStore = useMeStore();
 </script>
 <template>
   <div>
     Dashboard
+    <pre>{{ meStore.user }}</pre>
   </div>
 </template>

@@ -1,9 +1,10 @@
 import { defineStore } from "pinia";
 import axios from "axios";
+import { useMeStore } from "./me";
 
 export const useAuthStore = defineStore("auth", {
   state: () => ({
-    user: null,
+
   }),
   actions: {
     sanctum(){
@@ -14,13 +15,10 @@ export const useAuthStore = defineStore("auth", {
         email,
         password,
       }).then(response =>{
-        this.user = response.data.data;
+        const meStore = useMeStore();
+        meStore.user = response.data.data;
       });
     }
   },
-  getters: {
-    isLoggedIn: (state) => {
-      !!state?.user?.id;
-    },
-  },
+
 });
