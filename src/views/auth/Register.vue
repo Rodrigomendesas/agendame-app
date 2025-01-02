@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import Logo from '@/layouts/full/logo/Logo.vue';
 import RegisterForm from '@/components/auth/RegisterForm.vue';
 </script>
